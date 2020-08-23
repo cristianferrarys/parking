@@ -1,0 +1,77 @@
+
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/tab1/lis-vehiculos"></ion-back-button>
+    </ion-buttons >
+    <ion-title text-capitalize>
+      vehiculo
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      
+    <ion-grid fixed>
+    
+        <form (ngSubmit)="agregarVehiculo( fVehiculos )" #fVehiculos="ngForm">
+            <ion-row>
+                <ion-col>
+                    
+                    <ion-list>
+                        
+                        <ion-item>
+                        <ion-label>Placa</ion-label>
+                        <ion-input name="placa" 
+                                    type="text"
+                                    [(ngModel)]="vehiculo.placas"
+                                    required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                        <ion-label>Color</ion-label>
+                        <ion-input name="color"
+                                    type="text"
+                                    [(ngModel)]="vehiculo.color"
+                                    required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                        <ion-label>Marca</ion-label>
+                          <ion-input name="marca"
+                                      type="text"
+                                      [(ngModel)]="vehiculo.marca"
+                                      required></ion-input>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label>Modelo</ion-label>
+                              <ion-input name="modelo"
+                                          type="text"
+                                          [(ngModel)]="vehiculo.modelo"
+                                          required></ion-input>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Año</ion-label>
+                                  <ion-input name="anio"
+                                              type="number"
+                                              [(ngModel)]="vehiculo.anio"
+                                              required></ion-input>
+                                </ion-item>                            
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            
+            <ion-row>
+            <ion-col>
+                <ion-button type="submit"
+                            color="tertiary"
+                            shape="round">
+                    Guardar Vehiculo
+                </ion-button>
+            </ion-col>
+        </ion-row>
+        
+      </form>
+    </ion-grid>
+</ion-content>

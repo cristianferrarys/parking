@@ -13,6 +13,14 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab1/tab1.module#Tab1PageModule'
+          },
+          {
+            path: 'lis-vehiculos',
+            loadChildren: '../lis-vehiculos/lis-vehiculos.module#LisVehiculosPageModule'
+          },
+          {
+            path: 'vehiculo',
+            loadChildren: '../vehiculo/vehiculo.module#VehiculoPageModule'
           }
         ]
       },
@@ -31,6 +39,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tab4',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
           }
         ]
       },

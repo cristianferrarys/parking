@@ -1,9 +1,15 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons >
+        <ion-title text-capitalize>
+            Parquimetro
+        </ion-title>
+    </ion-toolbar>
+    <ion-button (click)="abrirModal()" expand="full">Modal</ion-button>
 </ion-header>
-
-<ion-content></ion-content>
+<ion-content>
+    <div id='map'></div>
+    <pre id='coordinates' class='coordinates'></pre>
+</ion-content>

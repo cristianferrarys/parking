@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cotizar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="cotizarPark( fCotizar )" #fCotizar="ngForm">
+    <ion-list>
+        <ion-list-header>Confirmar Estacionamiento</ion-list-header>
+        <ion-item>
+            <ion-label>Vehiculo</ion-label>
+            <ion-select     interface="action-sheet"
+                            name="aaaa" 
+                            placeholder="Vehiculo"
+                            [(ngModel)]= "NA"
+                            required>
+              <ion-select-option *ngFor="let vehi of vehiculo" [value]="vehi.placa">{{vehi.placa}}</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-label>Minutos</ion-label>
+              <ion-select     interface="action-sheet"
+                              name="bbb" 
+                              placeholder="Minutos"
+                              [(ngModel)]= "cotizar.minutos"
+                              required>
+              <ion-select-option *ngFor="let minu of minus" [value]="minu">{{minu}}</ion-select-option>
+
+              </ion-select>
+          </ion-item>
+      </ion-list>
+      <ion-label>{{timeVal}}- {{timesegu}}</ion-label>
+
+    <ion-button expand="full"
+                type="submit"
+                color="tertiary"
+                shape="round"
+                [disabled]="fCotizar.invalid">
+              Pagar Parking
+    </ion-button>
+  </form>
+
+<!-- <ion-button (click)="salirArgumentos()" expand="full">
+      salir con argumentos
+    </ion-button>-->  
+</ion-content>
